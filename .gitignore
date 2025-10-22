@@ -1,0 +1,21 @@
+﻿# OS/IDE
+.DS_Store
+.idea/
+*.iml
+
+# Build
+/target/
+/build/
+
+# Env & secrets
+.env
+
+# Docker volumes
+/data/
+docker-data/
+
+# Logs
+*.log
+
+# Node (혹시 쓸 경우)
+node_modules/
