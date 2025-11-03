@@ -1,0 +1,197 @@
+{
+	"info": {
+		"_postman_id": "df61d3bb-c43d-4c8e-b295-a5e482736c5c",
+		"name": "보험비교",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47663459",
+		"_collection_link": "https://dbfk0831-6704891.postman.co/workspace/9e23eb8c-be4e-47ca-87c9-de168896d88b/collection/47663459-df61d3bb-c43d-4c8e-b295-a5e482736c5c?action=share&source=collection_link&creator=47663459"
+	},
+	"item": [
+		{
+			"name": "상품조회",
+			"item": [
+				{
+					"name": "보험전체조회",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/v1/products/all",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"v1",
+								"products",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "보험필터링",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/v1/product/search?minPrice=40000&maxPrice=70000&category=운전자",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"v1",
+								"product",
+								"search"
+							],
+							"query": [
+								{
+									"key": "minPrice",
+									"value": "40000"
+								},
+								{
+									"key": "maxPrice",
+									"value": "70000"
+								},
+								{
+									"key": "category",
+									"value": "운전자"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "사용자",
+			"item": [
+				{
+					"name": "사용자목록조회",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/v1/user/list/all",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"v1",
+								"user",
+								"list",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "사용자 상세조회",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/v1/user?email=song@gmail.com",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"v1",
+								"user"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "song@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "사용자 생성",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"송유라4\",\r\n    \"email\": \"song4@gmail.com\",\r\n    \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/v1/user",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"v1",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "로그인",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"song@gmail.com\",\r\n    \"password\": \"password3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/login",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "사용자 수정",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"송유라2\",\r\n    \"email\": \"song@gmail.com\",\r\n    \"password\": \"password3\",\r\n    \"age\": 30,\r\n    \"region\": \"인천\",\r\n    \"carType\": \"소형\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/v1/user",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"v1",
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
